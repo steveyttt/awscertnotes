@@ -1,0 +1,14 @@
+https://git-codecommit.ap-southeast-2.amazonaws.com/v1/repos/wildrydes-site
+6k39eek6dih7caubdn7mfs34sf
+
+tysosteveeeee@amazon.com
+123yhbHGYH$#$
+
+Dynamo:
+arn:aws:dynamodb:ap-southeast-2:849375858678:table/Rides
+
+Api gateway
+https://mqy2gcj1h0.execute-api.ap-southeast-2.amazonaws.com/prod
+
+DELETE ALL OF THESE RESOURCES:
+https://aws.amazon.com/getting-started/hands-on/build-serverless-web-app-lambda-apigateway-s3-dynamodb-cognito/module-5/

@@ -11,6 +11,10 @@
 - - Similar to creating an access key (Can only download creds once and can only have 2 active creds at once)
 - - - ```SSH access``` requires you to craete an SSH key and to upload it to the SSH Key screen on the same screen where you can download http creds for code commit.
 - You can configure approval templates (minimum PR approvals before a merge can happen)
+- - These can specify mandatory approvals from certain local IAM users or ARNs
+- - These can be set on specific branches
+- Can configure SNS triggers for REPO changes (all / commit / branch specific)
+- - This can notify SNS topic or perform lambda changes
 
 
 Create a REPO with ```aws codecommit create-repository --repository-name RepoFromCLI --repository-description "My demonstration repository"```

@@ -31,8 +31,6 @@ You can use a buildspec.yaml file to define ALL the build steps needed to run th
 - OR
 You can insert build commands into the console when you create the code build job
 
-
-
 ```BUILDSPEC.YAML``` - Exists at the root folder level, it contains:
 
 phases:

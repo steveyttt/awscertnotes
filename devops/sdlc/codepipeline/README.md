@@ -4,6 +4,8 @@ Needs an IAM serice role to function
 Can use custom and default KMS keys
 Can use a default S3 bucket or a custom S3 bucket in the same account and region
 
+ENSURE YOU ENABLE VERSIONING ON THE S3 BUCKET THAT STORES THE SOURCE ARTIFACTS USED BY CODE PIPELINE
+
 Sources allowed are:
 - IF USING VCS YOU NEED TO SPECIFY THE BRANCH!!!! ONE BRANCH PER CODE PIPELINE!!!!
 - AWS CodeCommit (This is not supported in codedeploy)

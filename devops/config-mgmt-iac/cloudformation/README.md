@@ -73,6 +73,8 @@ WebServerGroup:
         Ref: "Elb"
 
 ### Nested Stacks ###
+Check a basic example here - https://github.com/natonic/CloudFormation-Deep-Dive/tree/master/Labs/NestedStacks
+Deleting the top leel stack deletes the children stacks
 Put a stack in a stack (Can be used for repetition and to get around limits)
 Type: AWS::CloudFormation::Stack
 Resources:

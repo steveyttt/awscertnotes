@@ -28,6 +28,7 @@ CF
 CW
 CodeCommit
 CodePipeline
+ALSO MANY 3rd PARTY LIBRARIES!!!!
 
 Default lambda IAM role has permissions to create cloudwatch logs
 {
@@ -69,6 +70,8 @@ Then publish a new version
 Then create an alias
 
 If you use aliases, uploading latest versions of code may not update the alias in use!
+
+S3ObjectVersion - Can be used as a parameter in CF when deploying a Lamda fuction. Update the version of code in the S3 bucket and then update the CF template to reference that version.
 
 There is a concurrent execution limits:
 Limit on number of functions which can run in one region, default is 1000 per region. You can see this in 2 error messages:

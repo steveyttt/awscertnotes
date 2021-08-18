@@ -7,9 +7,13 @@ Handy GitHub links - https://github.com/natonic/Developer-Tools-Deep-Dive
 Clarify the StepFunction terminology
 OPSWORKS - Need to lab this
 Do tests - https://www.whizlabs.com/learn/course/aws-devops-certification-training/183/pt
+VALIDATE ALL SERVICES WHICH WORK WITH ORGANIZATIONS
 
 
 LAMBDA - Check from developer folder
 CONFIG - Check from sysops folder
 STEPFUNCTIONS - Check the terminology
 WHIZLABS - https://www.whizlabs.com/aws-devops-certification-training/
+
+SCPs apply to root users in node accounts
+SCPs do NOT apply to the root account. This always has all permissions.

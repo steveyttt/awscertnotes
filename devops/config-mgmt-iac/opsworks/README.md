@@ -37,4 +37,4 @@ APPS - The code that makes up the application (Deployed onto a layer)
 
 If asked in the exam how to manage an EC2 instance using opsworks just rememer it is CHEF. You can use off the shelf or write custom recipes. If you use custom recipes you can hook them up to a REPO.
 
-BERKSHELF - This is a mechanism to manage dependencies. If you write custom cookbooks which need the dflt cookooks BERKSHELF can manage that for you.
+BERKSHELF - This is a mechanism to manage dependencies. If you write custom cookbooks which need the dflt cookooks BERKSHELF can manage that for you. 

@@ -1,6 +1,9 @@
+Mysql, maria, mSSQL, postgres, oracle, aurora
+
 elasticity - short term scale up - scale with demand
 scalability - scale out infra long term
 
+### RDS ###
 multi AZ - keeps DB copy in another AZ for fast failover
 - when one AZ fails AWS updates the DNS for the RDS instance to point to the instance in the other AZ
 - - amazon handle the DNS failover
@@ -15,6 +18,7 @@ multi AZ - keeps DB copy in another AZ for fast failover
 - When you reboot an RDS instance with Multi AZ you can choose "reboot with failover", i.e. promote other node first then reboot.
 - - this is a good way to simulate a failover.
 
+### Read Replicas ###
 read repliacs are RO replicas of an RDS instance
 - used for performance scaling
 - only RO version, so only supports RO actions
@@ -26,14 +30,7 @@ read repliacs are RO replicas of an RDS instance
 - good for busines reporting or DW solutions
 - - may come up in exam that prod RW db is suffeering performace. How can datawarehouse team lower performance? EASY create a Read Replica and point datawarehouse at that instance. OR OR OR use redshift
 
-Mysql
-postgres
-Maria DB
-Async replication
-
-aurora
-
-When creating Read replicas
+### When creating Read replicas ###
 - enabling RR will cause a brief suspension of IO to the master instance UNLESS you have multi AZ enabled. Then it will use the standby RDS instance. (So use multi AZ)
 - Maximum of 5 RR for postgres, myssql and maria
 - can have RR in different regions for all engines
@@ -44,23 +41,29 @@ When creating Read replicas
 - key metric is REPLICA LAG
 - Know the difference between RR and MultiAZ
 
+### Async replication ###
+Mysql
+postgres
+Maria DB
+
+### backups ###
 You can set a maintenance window (This is when auto upgrades can happen)
 You can set backup schedule and retention period
 you can enable termination protection
-
 enabling backups on a running instance causes a reboot
 - You cant create a RR until you enable backups!
 
-instances can be encrypted (RR too)
+### instances can be encrypted (RR too)
 enhanced monitoring gets metrics every 60 seconds
 
-Steps to encrypt an instance (Which was created without encryption)
+
+### Steps to encrypt an instance (Which was created without encryption)
 - take a snap of an RDS instance
 - copy snap to same or different region
 - then encrypt during the copy
 - restore the snap in RDS
 
-sharing encrypted snapshots between accounts (You can do it - JUST NEED CUSTOM KMS KEY)
+### sharing encrypted snapshots between accounts (You can do it - JUST NEED CUSTOM KMS KEY)
 - FIRST you need a custom KMS keys (This is because you can only share CUSTOM KMS keys between accounts)
 - create a snapshot using the kms key
 - share the custom KMS key to the accounts
@@ -73,24 +76,42 @@ sharing encrypted snapshots between accounts (You can do it - JUST NEED CUSTOM K
 RDS Versions - CHECK IN CONSOLE OR WITH CLI
 aws rds desribe-db-instances --region $REGION       
 
-AURORA
+### AURORA ###
 MySQl and PostGres compatible
 3 x better performance than postgres
 5 x better performance than mysql
 RDS instance does not need to be regional but can be global!
 Can be publicly accessible like any other RDS instance
 Encryption at rest is enabled by default - this means all RR are encrypted too
-
 starts with 10GB of storage and scales disk automatically
 64vCPU 488GB of memory maximum
-
 2 copies of your data is stored in 3 AZs so up to 6 versions in one region!
+
+Must be created in a VPC!
+Encrypt with KMS
+You cant encrypt and unencrypted database (It needs to be rebuilt)
+
+### Connection Management ###
+Cluster Endpoint - connects to primary DB (For writes)
+Reader Endpoint - provides a load balanced endpoint for RO activities
+Custom Endpoints - configure an endpoint which targets a specific aurora instance (like one specific to a team / application)
+instance endpoint - endpoint for a specific auroa instance
+
+### Aurora backups ###
+35 day backup retention period.
+point in time restore up to a second
+no impact to DB performance
+Stored in S3
+Can take snapshots and store them in S3
 
 Storage is self healing - data blocks and disks are scanned constantly and corrected if errors are found  
 
 2 replicas available
 - auroroa replicas (currently up to 15)
+- - low performance impact, replica can be a failover target with no data loss
 - mysql read replcais (currently up to 15)
+- - higher performance impact on DB
+- - Minutes of data loss at failover
 
 if cpu is 100% - - EXAM TIP
 - if this happens and writes are causing an issue you need to scale UP
@@ -116,3 +137,5 @@ Create a list of all RDS common ports
 3306 for MySQL
 1433 for MSSQL
 5432 PostGres
+
+MSSQL - Cannot scale storage live!

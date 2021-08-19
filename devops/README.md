@@ -14,6 +14,7 @@ LAMBDA - Check from developer folder
 CONFIG - Check from sysops folder
 STEPFUNCTIONS - Check the terminology
 WHIZLABS - https://www.whizlabs.com/aws-devops-certification-training/
+KINESIS HANDS ON - https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis-example.html
 
 Adhoc
 

@@ -1,0 +1,1 @@
+can take up to 72 hours to setup a DX connection

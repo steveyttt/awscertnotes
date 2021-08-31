@@ -56,7 +56,6 @@ enabling backups on a running instance causes a reboot
 ### instances can be encrypted (RR too)
 enhanced monitoring gets metrics every 60 seconds
 
-
 ### Steps to encrypt an instance (Which was created without encryption)
 - take a snap of an RDS instance
 - copy snap to same or different region

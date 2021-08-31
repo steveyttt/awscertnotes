@@ -61,3 +61,5 @@ https://docs.aws.amazon.com/streams/latest/dev/developing-producers-with-kpl.htm
 
 1000's of logs with realtime analysis = Kinesis
 Single log files with periodic analysis = cloud watch logs
+
+### Exam Tips ###

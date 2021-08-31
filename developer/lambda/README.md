@@ -142,3 +142,8 @@ Use the ```create-alias``` and ```update-alias``` AWS CLI commands to configure 
 - SAM
 - - ```DeploymentPreference``` - Specifies the configurations to enable gradual Lambda deployments. For more information about configuring gradual Lambda deployments, see Deploying serverless applications gradually.
 - - ```AutoPublishALias``` - Creates a new alias and points new version to it. Updates all event sources to use the new alias too. (fastest deployment model)
+
+
+### Exam ###
+- LAMBDA DOES NOT MONITOR MEMORY????
+- You can set up a custom CloudWatch metric filter using a pattern that includes 'REPORT', 'MAX', 'Memory' and 'Used:'.

@@ -12,6 +12,7 @@ CHECK WHIZLABS -  study guide PDF
 SOMETHING FUN - https://aws.amazon.com/blogs/devops/using-aws-codepipeline-for-deploying-container-images-to-aws-lambda-functions/
 Read the FAQ of all services
 Go through the guide and check I know all the things: https://d1.awsstatic.com/training-and-certification/docs-devops-pro/AWS-Certified-DevOps-Engineer-Professional_Exam-Guide.pdf
+do an AWS practive test
 
 ### WhitePapers ###
 This is an important one:
@@ -32,3 +33,7 @@ CONFIG - Check from sysops folder
 STEPFUNCTIONS - Check the terminology
 WHIZLABS - https://www.whizlabs.com/aws-devops-certification-training/
 KINESIS HANDS ON - https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis-example.html
+
+
+### Did you know? ###
+The full range of AWS Trusted Advisor Checks and Recommendations", only two support plans have all the Trust Advisor checks and these are Business and Enterprise

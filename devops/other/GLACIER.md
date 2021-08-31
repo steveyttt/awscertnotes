@@ -1,6 +1,6 @@
 long term data archiving and backup
 comprehensive sec and compliance capabilities
-can run qe=uery in functionality
+can run query in functionality
 use cases:
 - media assets which are never needed
 - health care info needed for years

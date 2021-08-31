@@ -14,6 +14,23 @@ functions you can run at deploy time to get values in real time
 - Fn:Transform (specifies a macro template)
 - Fn:Ref (Returns the value of a resource or parameter)
 
+### Sam ###
+[SAMPACKAGE])https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-package.html) 
+- Used to package lambda code and upload to an S3 bucket 
+- outputs a template you can use for the ```sam deploy command```
+- ```sam package --template-file ./mytemplate.yaml --output-template-file sam-template.yaml --s3-bucket {MYS3BUCKET}```
+
+[SAMDEPLOY](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-deploy.html)
+- Used to deploy a lambda function
+- ```sam deploy --template-file sam-template.yaml --stack-name {MYSTACKNAME} --capabilities CAPABILITY_IAM```
+
+https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html
+
+### SAM commands ###
+https://github.com/ACloudGuru-Resources/course-aws-certified-developer-associate/tree/main/CloudFormation_%26_SAM_Demo
+
+SAM templates should have ```Transform: AWS::Serverless-2016-10-31``` at the top (Before resources are defined).
+
 ### Condition Functions ###
 Functions that can be used for conditional logic (i.e. between dev and prod deployments)
 - Fn:And
@@ -74,7 +91,7 @@ WebServerGroup:
 
 ### Nested Stacks ###
 Check a basic example here - https://github.com/natonic/CloudFormation-Deep-Dive/tree/master/Labs/NestedStacks
-Deleting the top leel stack deletes the children stacks
+Deleting the top level stack deletes the children stacks
 Put a stack in a stack (Can be used for repetition and to get around limits)
 Type: AWS::CloudFormation::Stack
 Resources:
@@ -144,3 +161,7 @@ Use the !GetAtt function to get the attribute from the CF custom resource values
       }
     },
 
+###  Exam tips ###
+- 'Invalid Value or Unsupported Resource Property' errors appear only if there is a parameter naming mistake or that the property names are unsupported. 
+- 'Resource Failed to Stabilize' errors appear because a timeout is exceeded, the AWS service isn't available or is interrupted. 
+- any update which fails to rollback could be because of a number of reasons, but the most popular is due to the deployment account having permissions to create stacks, but not to modify or delete stacks. T

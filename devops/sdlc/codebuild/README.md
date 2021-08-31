@@ -68,3 +68,12 @@ artifacts:
     - hello.out
 
 
+### Exam Tips ###
+- There are built in ```env vars``` used by code buid which all start with ```codebuild_```
+- The order of preference re: memory is:
+- - START BUILD OPERATION
+- - BUILD PROJECT DEFINITION
+- - BUILD SPEC DECLARATION
+
+- You can set the artifact name space to BuildID. This will insert the BuildID into the S3 artifact name and create a DIR.
+

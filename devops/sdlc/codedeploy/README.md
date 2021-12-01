@@ -40,3 +40,5 @@ Perform a deploy (Under an application)
 
 Notes:
 - When using an ASG deployment group, CodeDeploy automatically installs the code on new nodes as they come online
+- Lambda and ECS deploymnet options are "all at once", linear or canary.
+- You do not need deployment target tags if the deployment target is an ASG

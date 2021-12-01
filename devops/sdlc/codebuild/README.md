@@ -10,8 +10,9 @@ Codebuild:
 
 Comes with pre-configured build environments "AKA images" which can be used to run builds. You can use a custom docker image as the build environment if necessary.
 
-Does it support Windows????
+Does it support Windows???? (Yes in core)
 Does it support passwords?
+Does not support RHEL OOB.
 
 You give build projects service roles...
 You set build timeouts
@@ -76,4 +77,6 @@ artifacts:
 - - BUILD SPEC DECLARATION
 
 - You can set the artifact name space to BuildID. This will insert the BuildID into the S3 artifact name and create a DIR.
+- approved source stages are Codecommit, ECR, S3, BB, GitHub
+- approved build stages are Jenkins and CodeBuild
 

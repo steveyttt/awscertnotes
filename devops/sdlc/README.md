@@ -26,7 +26,7 @@ Create a REPO with ```aws codecommit create-repository --repository-name RepoFro
 - If you see ```continuous delivery``` in the EXAM think of ```code build```
 - Can store ```env vars``` in ```parameter store```
 
-```buildspec.yaml file```
+```buildspec.yaml file``` (You can call it a different name if you use the CLI for deployment)
 phases:
   install:
     run-as: Linux-user-name

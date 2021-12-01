@@ -38,3 +38,7 @@ APPS - The code that makes up the application (Deployed onto a layer)
 If asked in the exam how to manage an EC2 instance using opsworks just rememer it is CHEF. You can use off the shelf or write custom recipes. If you use custom recipes you can hook them up to a REPO.
 
 BERKSHELF - This is a mechanism to manage dependencies. If you write custom cookbooks which need the dflt cookooks BERKSHELF can manage that for you. 
+
+- Ops works has lifecycle events for layers (like an ec2 instance state change) which can perform triggered actions (Like run chef cookbooks.)
+
+- Ops works can "auto heal" an instance if it does not contact OpsWorks. This involves killing and recreating an instance. (Note Beanstalk can only do this using ASGs and ALBs)

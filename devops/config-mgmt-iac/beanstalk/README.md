@@ -164,3 +164,12 @@ option_settings:
     IamInstanceProfile : "aws-elasticbeanstalk-ec2-role"
   "aws:elasticbeanstalk:customoption" :
     CloudWatchMetrics : "--mem-util --mem-used --mem-avail --disk-space-util --disk-space-used --disk-space-avail --disk-path=/ --auto-scaling"
+
+- " Leader only" commands can be executed once during a deployment within the "container command" section. these are things like SQL scripts, which should only execute once per deploy (Not once by every instance)
+
+- precedence order
+- - Settings applied directly to the environment – Settings specified during a create environment or update environment operation on the Elastic Beanstalk API by any client, including the Elastic Beanstalk console, EB CLI, AWS CLI, and SDKs. The Elastic Beanstalk console and EB CLI also apply recommended values for some options that apply at this level unless overridden.
+- - Saved Configurations – Settings for any options that are not applied directly to the environment are loaded from a saved configuration, if specified.
+- - Configuration Files (.ebextensions) – Settings for any options that are not applied directly to the environment, and also not specified in a saved configuration, are loaded from configuration files in the .ebextensions folder at the root of the application source bundle.
+Configuration files are executed in alphabetical order. For example, .ebextensions/01run.config is executed before .ebextensions/02do.config.
+- - Default Values – If a configuration option has a default value, it only applies when the option is not set at any of the above levels.

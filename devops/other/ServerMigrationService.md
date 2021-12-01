@@ -10,3 +10,6 @@ supports windows and some major linux distros
 https://docs.aws.amazon.com/server-migration-service/latest/userguide/console_workflow.html
 https://aws.amazon.com/server-migration-service/faqs/
 
+FYI - Servers generated from SMS do NOT have a specific tag
+SMS can generate instances from VMs on prem. 
+SMS cannot integrate and send messages to SNS

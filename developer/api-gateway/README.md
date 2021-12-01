@@ -1,5 +1,3 @@
-API = Application Programming Interface
-
 supports
 - ```restful APIs``` (Stateless, serverless workloads)
 - ```Websocket APIs``` (Chat apps)

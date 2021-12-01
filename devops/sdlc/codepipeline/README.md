@@ -20,9 +20,11 @@ Sources allowed are:
 
 Set a build stage
 - Use code build to build the relevant software (If needed)
+- can be Jenkins or codebuild
 
 set a deploy stage
 - use code deploy to deploy to the nodes
+- deploy can be many options (ECS, CF, Pipeline, opworks)
 
 ### Unit tests inside pipeline
 - Add a stage to the pipeline after source

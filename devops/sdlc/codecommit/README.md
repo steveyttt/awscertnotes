@@ -20,6 +20,20 @@
 
 ### Exam tips ###
 - To create a notification when a pull request is made enable NOTIFICATIONS for PULL REQUEST UPDATE EVENTS. Then choose SNS for the notifications
-- Triggers are used to send notifications when someone PUSHES to the repo only
+- Triggers are used to send notifications when someone PUSHES to the repo only (SNS and lambda)
 - Approval templates (Rules for pull request approvals)
 - All CodeCommit repos are ENCRYPTED using KMS (Which means developers need KMS permissions to commit and pull code)
+
+
+IAM permissions to allow an IAM entity to push code to a REPO but NOT the master branch.
+
+{ "Effect": "Allow",
+    "Action": [
+        "codecommit:GitPush",
+        "codecommit:Merge*" ],
+    "Resource": ["arn:aws:codecommit:*:*:the-repo-name" ],
+        "Condition": {
+            "StringNotEquals": {
+            "codecommit:References": [ "refs/heads/master" ] }
+        }
+}
